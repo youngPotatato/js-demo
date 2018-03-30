@@ -9,14 +9,18 @@
     <div id="example"></div>
     <script type="text/babel">
 var MyComponent = React.createClass({
+  getInitialState:function(){
+    return {likeIt:false};
+  },
   handleClick: function() {
-    this.refs.myTextInput.focus();
+    this.setState({likeIt:!this.likeIt});
   },
   render: function() {
+    let ss = this.likeIt?"yes":"no";
     return (
       <div>
-        <input type="text" ref="myTextInput" />
-        <input type="button" value="Focus the text input" onClick={this.handleClick} />
+        <p>you like it? {ss}</p>
+        <input type="button" value="you like it?" onClick={this.handleClick} />
       </div>
     );
   }

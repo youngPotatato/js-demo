@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="../build/react.js"></script>
+        <script src="../build/react-dom.js"></script>
+        <script src="../build/browser.min.js"></script>
+    </head>
+    <body>
+       <div id = "root"></div>>
+    <script type="text/babel">
+        class MyClock extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {date: new Date().getMilliseconds()};
+                //this.tick = this.tick.bind(this);
+                //this.startClock = this.startClock.bind(this);
+                //this.componentDidMount = this.componentDidMount.bind(this);
+            }
+            componentDidMount(){
+                setInterval(() => this.tick(),1000);
+            }
+            startClock(){
+            }
+            tick(){
+              this.setState({date: new Date().getMilliseconds()});
+              console.log("tick called");
+            }
+            componentWillUnmount() {
+                clearInterval();
+            }
+            render(){
+              const testString = (this.state.date%2)==0?"even":"odd";
+              return(
+                <div>
+                    <p>This is yang yu trying to explore life cycle!</p>
+                    <p>test string is {testString}</p>
+                    <input type="button" value ="test" onClick={this.tick}/>
+                    <p>Time is {this.state.date}</p>
+                </div>
+              )
+            }
+        }
+       ReactDOM.render(<MyClock />, document.getElementById('root'));
+    </script>
+    </body>
+
+</html>

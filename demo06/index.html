@@ -9,7 +9,8 @@
     <div id="example"></div>
     <script type="text/babel">
 
-      var data = 123;
+      /*
+      var data = "123";
 
       var MyTitle = React.createClass({
         propTypes: {
@@ -25,6 +26,154 @@
         <MyTitle title={data} />,
         document.getElementById('example')
       );
+      */
+      //function g(c){
+      //  if(c) {
+      //    let g = "gg";
+      //  }
+      //  else{
+      //    let h = "hh";
+      //    console.log(h);
+      //  }
+      //}
+      //g(true);
+      /*
+      const cheetah = {
+        name: 'Cheetah',
+        scientificName: 'Acinonyx jubatus',
+        lifespan: '10-12 years',
+        speed: '68-75 mph',
+        diet: 'carnivore',
+        summary: 'Fastest mammal on land, the cheetah can reach speeds of 60 or perhaps even 70 miles (97 or 113 kilometers) an hour over short distances. It usually chases its prey at only about half that speed, however. After a chase, a cheetah needs half an hour to catch its breath before it can eat.',
+        fact: 'Cheetahs have “tear marks” that run from the inside corners of their eyes down to the outside edges of their mouth.'
+       };
+
+      // creates an animal trading card
+      function createAnimalTradingCardHTML(animal) {
+      const cardHTML =
+        `<div class="card">
+            <h3 class="name"> ${animal.name} </h3>
+            <img src="${animal.name}.jpg" alt="${animal.name} class="picture">
+                <div class="description">
+                    <p class="fact"> $animal.fact </p>
+                        <ul class="details">
+                            <li><span class="bold">Scientific Name</span>: ${animal.scientificName} </li>
+                            <li><span class="bold">Average Lifespan</span>: ${animal.lifespan} </li>
+                            <li><span class="bold">Average Speed</span>: ${animal.speed} </li>
+                            <li><span class="bold">Diet</span>: ${animal.diet} </li>
+                        </ul>
+                    <p class="brief"> ${animal.summary} </p>
+                </div>
+        </div>`;
+      return cardHTML;
+      }
+
+      console.log(createAnimalTradingCardHTML(cheetah));
+      */
+
+
+
+      //const circle = {
+      //  radius: 10,
+      //  color: 'orange',
+      //  getArea: function() {
+      //    return Math.PI * this.radius * this.radius;
+      //  },
+      //  getCircumference: function() {
+      //    return 2 * Math.PI * this.radius;
+      //  }
+      //};
+
+      //let {radius, getArea, getCircumference} = circle;
+      //getArea();
+      /*
+      const ar = [1,2,3];
+      console.log(...ar);
+      let lowNames = ['Farrin', 'Kagure', 'Asser'];
+      const upperizedNames = lowNames.map(function(name) {
+        return name.toUpperCase();
+      });
+      console.log(...lowNames);
+      console.log(...upperizedNames);
+      const xx = "afasdf".split("");
+      console.log(xx);
+      function constru(){
+        console.log('constructor this', this);
+        this.name = 0;
+      }
+      constru.prototype.add1 = function(){
+        setTimeout(() => {
+            console.log(this.name);
+          },0.5
+        );
+      };
+      constru.prototype.add2 = ()=>{
+        setTimeout(() => {
+            console.log(this.name);
+          },0.5
+        );
+      };
+      const uu = new constru();
+      uu.add1();
+      uu.add2();
+     console.log("aa start");
+     function aa(a) {
+       return b => {
+         return [a, b];
+       };
+     }
+     let b = aa(12);
+     let bb = b(); // [12, undefined]
+     console.log(bb);
+     bb = b(15); // [12, 15]
+     console.log(bb);
+     bb = b;
+     console.log(bb);
+     function cc(){
+        return 1;
+      };
+     let d = cc();
+     let dd = d;
+      console.log(dd);
+      function constru(){
+        this.var1 = 0;
+      }
+      constru.prototype.addvar1 = function(){
+        setTimeout(this.var1++,1000)
+      }
+      constru.prototype.addvar2 = function(){
+        setTimeout(function(){this.var1++},1000)
+      }
+      constru.prototype.addvar3 = function(){
+        let th = this;
+        setTimeout(function(){th.var1++},1000)
+      }
+      const yy1 = new constru();
+      yy1.addvar1();
+      console.log(yy1.var1);
+      const yy2 = new constru();
+      yy2.addvar2();
+      console.log(yy2.var1);
+      const yy3 = new constru();
+      yy3.addvar3();
+      console.log(yy3.var1);
+     */
+      function test(v1 = "ss", v2 = "tt"){
+        return `${v1} and ${v2}` ;
+      }
+      console.log(test(undefined,'ttt2'));
+
+
+
+      function testObDest({v1 = "default v1", v2 =["default v2"]} = {}){
+        return `v1 is ${v1}, v2 is ${v2.join("and")}`;
+      }
+      console.log(testObDest());
+      console.log(testObDest({}));
+      console.log(testObDest({v1:"new v1"}));
+      console.log(testObDest({v2:["new v2"]}));
+
+
 
     </script>
   </body>

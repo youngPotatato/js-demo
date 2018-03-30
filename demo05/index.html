@@ -9,21 +9,24 @@
     <div id="example"></div>
     <script type="text/babel">
       var NotesList = React.createClass({
+        propTypes:{
+          title:React.PropTypes.string.isRequired,
+        },
         render: function() {
           return (
-            <ol>
+            <h2>
               {
                 React.Children.map(this.props.children, function (child) {
-                  return <li>{child}</li>;
+                  return <h2>{child}</h2>;
                 })
               }
-            </ol>
+            </h2>
           );
         }
       });
-
+      let  t = 11;
       ReactDOM.render(
-        <NotesList>
+        <NotesList title = {t}>
           <span>hello</span>
           <span>world</span>
         </NotesList>,

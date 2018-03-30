@@ -8,13 +8,13 @@
   <body>
     <div id="example"></div>
     <script type="text/babel">
-      var names = ['Alice', 'Emily', 'Kate'];
+      let names = ['Alice', 'Emily', 'Kate'];
 
       ReactDOM.render(
         <div>
         {
-          names.map(function (name, index) {
-            return <div key={index}>Hello, {name}!</div>
+          names.map(function (name) {
+            return <div >Hello, {name}!</div>
           })
         }
         </div>,
